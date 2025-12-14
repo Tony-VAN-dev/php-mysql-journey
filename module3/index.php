@@ -12,7 +12,9 @@
 </form>
 
 <?php
-    if(isset($_POST['prenom'])){
-        echo direBonjour($_POST['prenom']);
+    if(isset($_POST['prenom']) && $_POST['prenom'] !== ""){
+        echo direBonjour(prenom: $_POST['prenom']);
+    }else{
+        echo "Entrez votre prénom d'abord";
     }
 ?>
