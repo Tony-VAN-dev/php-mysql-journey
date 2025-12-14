@@ -8,6 +8,8 @@
     $age = 20;
     $prenoms = ["Tony", "Ilyes", "Rabia"];
     $nbTour = 0;
+    
+    //VARIABLES ET FONCTIONS
 ?>
 
 <form method="post">
@@ -15,7 +17,7 @@
     <input type="submit" value="Envoyer">
 </form>
 
-<?php
+<?php // BOUCLES
     while ($nbTour < count(value: $prenoms))
     {
         echo ++$nbTour."<br>";
@@ -27,7 +29,7 @@
 ?>
 
 
-<?php
+<? // CONDITIONS DU FORMULAIRE
     if(isset($_POST['prenom']) && $_POST['prenom'] == ""){
             echo "Entrez votre prénom d'abord";
     }
