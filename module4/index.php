@@ -1,7 +1,6 @@
 <?php
     require 'dbh.ext.php';
 
-    //si la requête fonctionne
     $sqlQuery = 'SELECT * FROM personnes;';
 
     function creerUnePersonne($conn, $prenom,$age): void{
