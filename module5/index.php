@@ -1,6 +1,6 @@
 <?php
     session_start();
-    if(isset($_POST['username']) && !empty($_POST['password']))
+    if(!empty($_POST['username']) && !empty($_POST['password']))
     {
          if($_POST['password'] == "secret")
         {
