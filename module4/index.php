@@ -13,6 +13,8 @@
                     {
                         echo "prénom : ". $row['prenom']. " " ."âge" . $row['age'];
                     }
+            } else{
+                echo "Erreur : ". mysqli_error($conn);
             }
     }
 
