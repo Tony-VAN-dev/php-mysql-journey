@@ -1,18 +1,23 @@
 <?php
     session_start();
-    if(isset($_POST['username']))
+    if(isset($_POST['username']) && !empty($_POST['password']))
     {
-        $_SESSION['username'] = $_POST['username'];
+         if($_POST['password'] == "secret")
+        {
+            $_SESSION['username'] = $_POST['username'];
+            echo '<a href="logout.php">Se déconnecter</a>';
+        
+        } 
+        else
+        {
+            echo "Mot de passe incorrect";
+        }
     }
-
-    if(isset($_SESSION['username']))
-    {
-        echo "Bonjour ". $_SESSION['username'] . " ! ";
-        echo '<a href="logout.php">Se déconnecter</a>';
-    }
+       
 ?>
 
 <form method="post">
     <input type="text" name="username">
+    <input type="password" name="password">
     <input type="submit">
 </form>
