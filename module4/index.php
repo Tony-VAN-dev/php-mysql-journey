@@ -42,8 +42,25 @@
         }
     }
 
-    creerUnePersonne($conn, "Tony", 20);
+    function deleteSomeone($conn, $id)
+    {
+        $selectSomeoneQuery = "SELECT prenom FROM personnes WHERE ID=" . $id .";";
+        $deleteSomeoneQuery = "DELETE FROM personnes WHERE ID =".$id.";";
+        $result = mysqli_query($conn, $selectSomeoneQuery);
+        $someoneName = mysqli_fetch_assoc($result);
+
+        if(mysqli_query($conn, $deleteSomeoneQuery))
+        {
+            echo "La personne ".$someoneName['prenom'] . " a bien été supprimée !<br>";
+        }else
+        {
+            echo "Aucune personne à supprimer de trouvé";
+        }
+    }
+
+    // creerUnePersonne($conn, "Tony", 20);
     // updateSomeone($conn,7, "Tony");
+    deleteSomeone($conn,30);
     displayPeople($conn);
     
 ?>
