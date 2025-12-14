@@ -3,6 +3,6 @@
         return "Bonjour ".$prenom;
     }
     $prenom = "Tony";
-    echo direBonjour($prenom);
+    echo direBonjour($prenom)."<br>";
 ?>
 
