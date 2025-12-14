@@ -11,12 +11,25 @@
                 $result = mysqli_query($conn, "SELECT * FROM personnes".";");
                 while($row = mysqli_fetch_assoc(result: $result))
                     {
-                        echo "prénom : ". $row['prenom']. " " ."âge" . $row['age'];
+                        echo "Création de la personne ". $row['prenom'] . " réussie !";
                     }
             } else{
-                echo "Erreur : ". mysqli_error($conn);
+                die("Erreur de connexion : ". mysqli_error($conn));
             }
     }
+    function displayPeople($conn){
+        $selectPeopleQuery = "SELECT * FROM personnes".";"; //requête
+        $result = mysqli_query($conn,$selectPeopleQuery); // réponse suite à la requête
 
-    creerUnePersonne($conn, "Tony", 20);
+        if($result)
+            {
+                while($row = mysqli_fetch_assoc($result))
+                {
+                    echo "Prénom " . $row['prenom']. " âge : ". $row['age'];
+                }
+            }
+    }
+    // creerUnePersonne($conn, "Tony", 20);
+    displayPeople($conn);
+    
 ?>
