@@ -36,7 +36,7 @@
     echo $personne["prenom"].$personne["age"];
 ?>
 
-<? // CONDITIONS DU FORMULAIRE
+<?php // CONDITIONS DU FORMULAIRE
     if(isset($_POST['prenom']) && $_POST['prenom'] == ""){
             echo "Entrez votre prénom d'abord";
     }
