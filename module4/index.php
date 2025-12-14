@@ -11,7 +11,7 @@
                 $result = mysqli_query($conn, "SELECT * FROM personnes".";");
                 while($row = mysqli_fetch_assoc(result: $result))
                     {
-                        echo "Création de la personne ". $row['prenom'] . " réussie !";
+                        echo "Création de la personne ". $row['prenom'] . " réussie ! <br>";
                     }
             } else{
                 die("Erreur de connexion : ". mysqli_error($conn));
@@ -25,7 +25,7 @@
             {
                 while($row = mysqli_fetch_assoc($result))
                 {
-                    echo "Prénom " . $row['prenom']. " âge : ". $row['age'];
+                    echo "Prénom " . $row['prenom']. " âge : ". $row['age']."<br>";
                 }
             }
     }
@@ -38,12 +38,12 @@
         if($result){
             return $result;
         }else{
-            die("Erreur de mis à jour de la personne : ". mysqli_error($conn));
+            die("Erreur de mis à jour de la personne : ". mysqli_error($conn)."<br>");
         }
     }
 
-    // creerUnePersonne($conn, "Tony", 20);
-    updateSomeone($conn,7, "Tony");
+    creerUnePersonne($conn, "Tony", 20);
+    // updateSomeone($conn,7, "Tony");
     displayPeople($conn);
     
 ?>
