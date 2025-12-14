@@ -29,7 +29,21 @@
                 }
             }
     }
+
+    function updateSomeone($conn, $id, $prenom)
+    {
+        $updateSomeoneQuery = "UPDATE personnes SET prenom = " . "'" .$prenom ."'" . " WHERE ID = ". $id;
+
+        $result = mysqli_query($conn, query: $updateSomeoneQuery);
+        if($result){
+            return $result;
+        }else{
+            die("Erreur de mis à jour de la personne : ". mysqli_error($conn));
+        }
+    }
+
     // creerUnePersonne($conn, "Tony", 20);
+    updateSomeone($conn,7, "Tony");
     displayPeople($conn);
     
 ?>
