@@ -9,6 +9,10 @@
     $prenoms = ["Tony", "Ilyes", "Rabia"];
     $nbTour = 0;
     
+    $personne = [
+        "prenom" => "tony",
+        "age" => 20
+    ];
     //VARIABLES ET FONCTIONS
 ?>
 
@@ -28,6 +32,9 @@
     }
 ?>
 
+<?php
+    echo $personne["prenom"].$personne["age"];
+?>
 
 <? // CONDITIONS DU FORMULAIRE
     if(isset($_POST['prenom']) && $_POST['prenom'] == ""){
