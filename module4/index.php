@@ -48,8 +48,8 @@
         $deleteSomeoneQuery = "DELETE FROM personnes WHERE ID =".$id.";";
         $result = mysqli_query($conn, $selectSomeoneQuery);
         $someoneName = mysqli_fetch_assoc($result);
-
-        if(mysqli_query($conn, $deleteSomeoneQuery))
+        mysqli_query($conn,$deleteSomeoneQuery);
+        if(mysqli_affected_rows($conn) > 0)
         {
             echo "La personne ".$someoneName['prenom'] . " a bien été supprimée !<br>";
         }else
@@ -60,7 +60,7 @@
 
     // creerUnePersonne($conn, "Tony", 20);
     // updateSomeone($conn,7, "Tony");
-    deleteSomeone($conn,30);
+    // deleteSomeone($conn,29);
     displayPeople($conn);
     
 ?>
